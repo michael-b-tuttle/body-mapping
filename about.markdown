@@ -1,0 +1,7 @@
+---
+layout: page
+title: About
+permalink: /about/
+---
+
+Here the user can learn about the project. Your reasons for wanting to do this research. etc.
