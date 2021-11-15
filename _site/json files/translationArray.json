@@ -1,0 +1,244 @@
+{
+  "segmentArr": [
+    {
+      "fStart": 0,
+      "fEnd": 16,
+      "mStart": 0,
+      "mInc": 0.875
+    },
+    {
+      "fStart": 16,
+      "fEnd": 27,
+      "mStart": 14,
+      "mInc": 1
+    },
+    {
+      "fStart": 27,
+      "fEnd": 39,
+      "mStart": 25,
+      "mInc": 1.5
+    },
+    {
+      "fStart": 39,
+      "fEnd": 62,
+      "mStart": 43,
+      "mInc": 0.9130434782608695
+    },
+    {
+      "fStart": 62,
+      "fEnd": 93,
+      "mStart": 64,
+      "mInc": 0.9032258064516129
+    },
+    {
+      "fStart": 93,
+      "fEnd": 102,
+      "mStart": 92,
+      "mInc": 1
+    },
+    {
+      "fStart": 102,
+      "fEnd": 109,
+      "mStart": 101,
+      "mInc": 1.1428571428571428
+    },
+    {
+      "fStart": 109,
+      "fEnd": 115,
+      "mStart": 109,
+      "mInc": 1.3333333333333333
+    },
+    {
+      "fStart": 115,
+      "fEnd": 123,
+      "mStart": 117,
+      "mInc": 1.25
+    },
+    {
+      "fStart": 123,
+      "fEnd": 161,
+      "mStart": 127,
+      "mInc": 0.7894736842105263
+    },
+    {
+      "fStart": 161,
+      "fEnd": 177,
+      "mStart": 157,
+      "mInc": 0.8125
+    },
+    {
+      "fStart": 177,
+      "fEnd": 239,
+      "mStart": 170,
+      "mInc": 0.9354838709677419
+    },
+    {
+      "fStart": 239,
+      "fEnd": 275,
+      "mStart": 228,
+      "mInc": 0.9166666666666666
+    },
+    {
+      "fStart": 275,
+      "fEnd": 281,
+      "mStart": 261,
+      "mInc": 0.8333333333333334
+    },
+    {
+      "fStart": 281,
+      "fEnd": 284,
+      "mStart": 266,
+      "mInc": 0.6666666666666666
+    },
+    {
+      "fStart": 284,
+      "fEnd": 286,
+      "mStart": 268,
+      "mInc": 3.5
+    },
+    {
+      "fStart": 286,
+      "fEnd": 294,
+      "mStart": 275,
+      "mInc": 1.25
+    },
+    {
+      "fStart": 294,
+      "fEnd": 296,
+      "mStart": 285,
+      "mInc": 2.5
+    },
+    {
+      "fStart": 296,
+      "fEnd": 331,
+      "mStart": 290,
+      "mInc": 0.9428571428571428
+    },
+    {
+      "fStart": 331,
+      "fEnd": 367,
+      "mStart": 323,
+      "mInc": 0.8888888888888888
+    },
+    {
+      "fStart": 367,
+      "fEnd": 398,
+      "mStart": 355,
+      "mInc": 0.9032258064516129
+    },
+    {
+      "fStart": 398,
+      "fEnd": 426,
+      "mStart": 383,
+      "mInc": 1.0357142857142858
+    },
+    {
+      "fStart": 426,
+      "fEnd": 428,
+      "mStart": 412,
+      "mInc": 0.5
+    },
+    {
+      "fStart": 428,
+      "fEnd": 437,
+      "mStart": 413,
+      "mInc": 0.7777777777777778
+    },
+    {
+      "fStart": 437,
+      "fEnd": 439,
+      "mStart": 420,
+      "mInc": 7.5
+    },
+    {
+      "fStart": 439,
+      "fEnd": 447,
+      "mStart": 435,
+      "mInc": 1.25
+    },
+    {
+      "fStart": 447,
+      "fEnd": 484,
+      "mStart": 445,
+      "mInc": 0.9459459459459459
+    },
+    {
+      "fStart": 484,
+      "fEnd": 547,
+      "mStart": 480,
+      "mInc": 0.9047619047619048
+    },
+    {
+      "fStart": 547,
+      "fEnd": 568,
+      "mStart": 537,
+      "mInc": 0.7619047619047619
+    },
+    {
+      "fStart": 568,
+      "fEnd": 600,
+      "mStart": 553,
+      "mInc": 0.84375
+    },
+    {
+      "fStart": 600,
+      "fEnd": 607,
+      "mStart": 580,
+      "mInc": 1.5714285714285714
+    },
+    {
+      "fStart": 607,
+      "fEnd": 612,
+      "mStart": 591,
+      "mInc": 1.2
+    },
+    {
+      "fStart": 612,
+      "fEnd": 618,
+      "mStart": 597,
+      "mInc": 1.5
+    },
+    {
+      "fStart": 618,
+      "fEnd": 626,
+      "mStart": 606,
+      "mInc": 1.625
+    },
+    {
+      "fStart": 626,
+      "fEnd": 656,
+      "mStart": 619,
+      "mInc": 1.0666666666666667
+    },
+    {
+      "fStart": 656,
+      "fEnd": 692,
+      "mStart": 651,
+      "mInc": 0.8888888888888888
+    },
+    {
+      "fStart": 692,
+      "fEnd": 710,
+      "mStart": 683,
+      "mInc": 0.8888888888888888
+    },
+    {
+      "fStart": 710,
+      "fEnd": 724,
+      "mStart": 699,
+      "mInc": 0.5714285714285714
+    },
+    {
+      "fStart": 724,
+      "fEnd": 735,
+      "mStart": 707,
+      "mInc": 1.2727272727272727
+    },
+    {
+      "fStart": 735,
+      "fEnd": 736,
+      "mStart": 721,
+      "mInc": 1
+    }
+  ]
+}
