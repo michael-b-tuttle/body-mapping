@@ -22,8 +22,8 @@ title: body mapping
 email: enfleshings@web.de
 description: >- # this means to ignore newlines until "baseurl:"
   body mapping deals with the question of body-images as awareness
-# baseurl: "body-mapping" # the subpath of your site, e.g. /blog
-baseurl: ""
+baseurl: "body-mapping" # the subpath of your site, e.g. /blog
+# baseurl: ""
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: twitter
 # github_username:  jekyll
