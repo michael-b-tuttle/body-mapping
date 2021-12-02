@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Drawing
+title: drawing
 ---
 
 <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
@@ -25,7 +25,6 @@ title: Drawing
   db.settings({
     timestampsInSnapshots: true
   });
-
 </script>
 
 After selecting body type please color in where you feel each emotion.
@@ -64,7 +63,6 @@ After selecting body type please color in where you feel each emotion.
     border: 1px solid black;
     background-color: #e6e6e6;
     color: black;
-    <!-- padding: 1.5vw; -->
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -82,26 +80,65 @@ After selecting body type please color in where you feel each emotion.
     position: fixed;
     margin-top: -160px;
     top: 20%;
-    <!-- border: 3px solid green; -->
-
-    <!-- margin: 0 auto; -->
-
-
-
-
   }
+
   #outer {
     width: 600px;
     height: 1000px;
     margin: 0 auto;
-    <!-- border: 1px solid red; -->
-
-    <!-- padding: 0px 0px 100px 0px; -->
   }
 
+  #questionnaire {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  outline: none;
+  font-size: 15px;
+  border: 1px #e6e6e6;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+  #questions {
+  padding: 18px;
+  display: block;
+  max-height: 1;
+  overflow: hidden;
+  background-color: #aaf1f1;
+  border: 1px #e6e6e6;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: max-height 0.75s ease-out;
+}
+  .collapse {
+    transition: max-height 0.75s ease-out;
+    max-height: 0;
+    visibility: hidden;
+    margin: 0px;
+  }
 </style>
+
 <div id='outer'>
   <div id='drawing-container'>
+  <button id='questionnaire'><h4>questionnaire</h4>click to close</button>
+    <div id='questions'>
+      <h4>please tell us a little about yourself...</h4>
+      do you have a confession, what is it? <br>
+      <input type="text" id="q1" value="">
+      <br>
+      what is your profession? <br>
+      <input type="text" id="q2" value="">
+      <br>
+      where have you spent most of your life? <br>
+      <input type="text" id="q3" value="">
+      <br>
+      what is your age? <br>
+      <input type="text" id="q4" value=""> <br>
+      where do you live now? <br>
+      <input type="text" id="q5" value=""> <br>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js">
     </script>
     <script type="text/javascript" src="sketch.js"></script>

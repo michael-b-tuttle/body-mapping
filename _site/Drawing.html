@@ -3,24 +3,24 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Drawing | Body Mapping</title>
+<title>drawing | body mapping</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Drawing" />
+<meta property="og:title" content="drawing" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="This site was designed to find out where in the body people experience emotions" />
-<meta property="og:description" content="This site was designed to find out where in the body people experience emotions" />
+<meta name="description" content="body mapping deals with the question of body-images as awareness" />
+<meta property="og:description" content="body mapping deals with the question of body-images as awareness" />
 <link rel="canonical" href="http://localhost:4000/Drawing.html" />
 <meta property="og:url" content="http://localhost:4000/Drawing.html" />
-<meta property="og:site_name" content="Body Mapping" />
+<meta property="og:site_name" content="body mapping" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Drawing" />
+<meta property="twitter:title" content="drawing" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"http://localhost:4000/Drawing.html","description":"This site was designed to find out where in the body people experience emotions","headline":"Drawing","@context":"https://schema.org"}</script>
+{"url":"http://localhost:4000/Drawing.html","headline":"drawing","description":"body mapping deals with the question of body-images as awareness","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Body Mapping" /></head>
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="body mapping" /></head>
 <body><header class="site-header" role="banner">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">Body Mapping</a><nav class="site-nav">
+  <div class="wrapper"><a class="site-title" rel="author" href="/">body mapping</a><nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
         <label for="nav-trigger">
           <span class="menu-icon">
@@ -30,7 +30,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/Drawing.html">Drawing</a><a class="page-link" href="/about/">About</a></div>
+        <div class="trigger"><a class="page-link" href="/Drawing.html">drawing</a><a class="page-link" href="/about/">about</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -38,7 +38,7 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Drawing</h1>
+    <h1 class="post-title">drawing</h1>
   </header>
 
   <div class="post-content">
@@ -64,7 +64,6 @@
   db.settings({
     timestampsInSnapshots: true
   });
-
 </script>
 
 <p>After selecting body type please color in where you feel each emotion.</p>
@@ -103,7 +102,6 @@
     border: 1px solid black;
     background-color: #e6e6e6;
     color: black;
-    <!-- padding: 1.5vw; -->
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -121,27 +119,65 @@
     position: fixed;
     margin-top: -160px;
     top: 20%;
-    <!-- border: 3px solid green; -->
-
-    <!-- margin: 0 auto; -->
-
-
-
-
   }
+
   #outer {
     width: 600px;
     height: 1000px;
     margin: 0 auto;
-    <!-- border: 1px solid red; -->
-
-    <!-- padding: 0px 0px 100px 0px; -->
   }
 
+  #questionnaire {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  outline: none;
+  font-size: 15px;
+  border: 1px #e6e6e6;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+  #questions {
+  padding: 18px;
+  display: block;
+  max-height: 1;
+  overflow: hidden;
+  background-color: #aaf1f1;
+  border: 1px #e6e6e6;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: max-height 0.75s ease-out;
+}
+  .collapse {
+    transition: max-height 0.75s ease-out;
+    max-height: 0;
+    visibility: hidden;
+    margin: 0px;
+  }
 </style>
 
 <div id="outer">
   <div id="drawing-container">
+  <button id="questionnaire"><h4>questionnaire</h4>click to close</button>
+    <div id="questions">
+      <h4>please tell us a little about yourself...</h4>
+      do you have a confession, what is it? <br />
+      <input type="text" id="q1" value="" />
+      <br />
+      what is your profession? <br />
+      <input type="text" id="q2" value="" />
+      <br />
+      where have you spent most of your life? <br />
+      <input type="text" id="q3" value="" />
+      <br />
+      what is your age? <br />
+      <input type="text" id="q4" value="" /> <br />
+      where do you live now? <br />
+      <input type="text" id="q5" value="" /> <br />
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js">
     </script>
     <script type="text/javascript" src="sketch.js"></script>
@@ -158,19 +194,19 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">Body Mapping</h2>
+    <h2 class="footer-heading">body mapping</h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
-          <li class="p-name">Body Mapping</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+          <li class="p-name">body mapping</li><li><a class="u-email" href="mailto:enfleshings@web.de">enfleshings@web.de</a></li></ul>
       </div>
 
-      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://www.twitter.com/twitter"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">twitter</span></a></li></ul>
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
 </div>
 
       <div class="footer-col footer-col-3">
-        <p>This site was designed to find out where in the body people experience emotions</p>
+        <p>body mapping deals with the question of body-images as awareness</p>
       </div>
     </div>
 

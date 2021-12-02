@@ -18,15 +18,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Body Mapping
-email: your-email@example.com
+title: body mapping
+email: enfleshings@web.de
 description: >- # this means to ignore newlines until "baseurl:"
-  This site was designed to find out where in the body people experience
-  emotions
-baseurl: "body-mapping" # the subpath of your site, e.g. /blog
-# baseurl: ""
+  body mapping deals with the question of body-images as awareness
+# baseurl: "body-mapping" # the subpath of your site, e.g. /blog
+baseurl: ""
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: twitter
+# twitter_username: twitter
 # github_username:  jekyll
 
 # Build settings

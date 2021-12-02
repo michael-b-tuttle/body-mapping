@@ -1,37 +1,32 @@
-//the site's home page should have a simple video showing someone use the page
-//lock canvas in place, maybe onClick=noScroll?
 let fJSON;
 let mJSON;
 let transJSON;
 
 let cnv;
-// let drawCont;
 
 let displayArr = [];
-
 let bodySlider;
 let drawing = [];
 let brushBoxes = [];
 let currCol;
 let currBrush;
 let currSeed = 1;
-let radMax = 15;
+let radMax = 17;
 let rad = radMax;
 let scaleX;
 let scaleY;
-// let onbeforeunload;
+
 let namesOfEmotions = [];
 let emotionSel;
 let currEmotion;
 let saveButton;
 let dataAdded = false;
-
+let saved = false;
 let reposition;
-//to save all data from collection
-//maybe convert it all to a single json first,
-//then save as single json
 
-//save on close, quit?!
+let isMobile = false;
+let questionnaire;
+
 function preload() {
   fJSON = loadJSON('json files/fArr.json');
   mJSON = loadJSON('json files/mArr.json');
@@ -39,36 +34,30 @@ function preload() {
 }
 
 function setup() {
-  // // cnv = createCanvas(windowHeight / 2, windowHeight);
-  // cnv.parent('drawing-container');
-  // // cnv.id('bodyCanvas');
-  // drawCont = select('#drawing-container');
-  // //language option?
-  // changeLanguage();
-
   console.clear();
-
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    isMobile = true;
+  } else {
+    isMobile = false;
+  }
+  questionnaire = select('#questionnaire');
+  questionnaire.mousePressed(hideQuestions);
   cnv = createCanvas(windowHeight / 2, windowHeight);
   cnv.parent('drawing-container');
   cnv.class('bodyCanvas');
-  // drawCont = select('#drawing-container');
-
   pixelDensity(1);
   scaleX = width / 500;
   scaleY = height / 1000;
   bodySlider = new BodySlider();
   bodySlider.resize();
-
   saveButton = createButton("save");
   saveButton.class('saveButton');
   saveButton.parent('drawing-container');
-
-  // saveButton.mousePressed(saveData);
+  saveButton.mousePressed(saveData);
   emotionSel = createSelect();
   emotionSel.class('emotionSel');
   emotionSel.parent('drawing-container');
   emotionSel.changed(() => currEmotion = emotionSel.value());
-  // emotionSel.style('background-color', color(200));
   for (let i = 0; i < fJSON.arr.length; i++) {
     let x = fJSON.arr[i].x;
     let y = fJSON.arr[i].y;
@@ -88,61 +77,13 @@ function setup() {
   currCol = color(0);
   currBrush = "points";
   emotionMenu();
-  windowResized();
   reposition = new Reposition();
+  reposition.update();
+  windowResized();
 }
 
-// function buttonsAndSliders() {
-//   buttonsDiv = createDiv();
-//   buttonsDiv.id('buttons');
-//   buttonsDiv.parent('drawing-container');
-//   saveButton = createButton("save");
-//   saveButton.parent('buttons');
-//   saveButton.mousePressed(saveData);
-//   eraseButton = createButton("erase");
-//   eraseButton.parent('buttons');
-//   eraseButton.mousePressed(() => emotions[currMood].length = 0);
-//   colSlider = createSlider(0, 255, 150);
-//   colSlider.style('width', '230px');
-//   colSlider.style('opacity', '0');
-//   colSlider.parent('buttons');
-//   currCol = colSlider.value();
-//   moodSel = createSelect();
-//   moodSel.parent('buttons');
-//   moodSel.changed(() => currMood = moodSel.value());
-//   buttonsDiv.position(wrapper.offsetLeft + wrapper.style.paddingLeft, 2 + wrapper.offsetHeight);
-//   // console.log(buttonsDiv.x, buttonsDiv.y, wrapper.offsetLeft, wrapper.offsetHeight);
-// }
-//
-// function rainbowGen() {
-//   rainbow = createImage(colSlider.width, colSlider.height);
-//   rainbow.loadPixels();
-//   let rate = 255 / rainbow.width;
-//   for (let i = 0; i < rainbow.width; i++) {
-//     let c = color(i * rate, 255, 255);
-//     for (let j = 0; j < rainbow.height; j++) {
-//       rainbow.set(i, j, c);
-//     }
-//   }
-//   rainbow.updatePixels();
-// }
-
-
-
 function draw() {
-  // if (mouseX < cnv.width && mouseY < cnv.height - saveButton.height - 10) {
-  //   fill(currCol, 255, 255, 100);
-  //   noStroke();
-  //   ellipse(mouseX, mouseY, 20, 20);
-  //   if (mouseIsPressed) addPoints();
-  // }
-  // if (emotions[currMood].length > 0) drawImage();
-  // colSlider.input(colorUpdate);
-
-  // saveButton.position(mouseX, mouseY);
-
   background(255);
-
   if (mouseY < height - brushBoxes[0].h && mouseY > bodySlider.ySize) {
     noCursor();
   }
@@ -158,40 +99,51 @@ function draw() {
   strokeWeight(1);
   rect(0, 0, width - 1, height - 1);
   bodySlider.display();
-  // if (dataAdded) saveButton.style('background-color', color(255, 255, 0));
-  // else {
-  //   saveButton.style('background-color', color(200))
-  // }
-  // let container = document.getElementById('drawing-container');
-  // if (document.documentElement.scrollTop >= 170) {
-  //   container.classList.add("sticky");
-  // } else {
-  //   container.classList.remove("sticky")
-  // }
   reposition.update();
+  if (dataAdded && !saved) {
+    window.onbeforeunload = function() {
+      saveData();
+    }
+  }
 }
 
-// function saveData() {
-//   let data = {
-//     points: emotions
-//   };
-//   db.collection('drawing_data').add(data);
-// }
+function hideQuestions() {
+  let questions = select('#questions');
+    if (questions.hasClass('collapse') === false) {
+      questions.addClass('collapse');
+    } else {
+      questions.removeClass('collapse');
+    }
+    windowResized();
+}
 
 function saveData() {
-  if (dataAdded) {
-    // let data = {
-    //   points: drawing
-    // };
-    // db.collection('drawing_data').add(data);
+  let q1 = select('#q1').elt.value;
+  let q2 = select('#q2').elt.value;
+  let q3 = select('#q3').elt.value;
+  let q4 = select('#q4').elt.value;
+  let q5 = select('#q5').elt.value;
+  if (dataAdded && !saved) {
+    let jsonOutput = {};
+    const d = new Date();
+    jsonOutput['info'] = ['gender: ' + bodySlider.value, 'date: ' + d];
+    jsonOutput['questions'] = [
+      'confession: ' + q1,
+      'profession: ' + q2,
+      'where have you lived: ' + q3,
+      'age: ' + q4,
+      'where currently: ' + q5
+    ];
+    jsonOutput['desire'] = drawing[0];
+    jsonOutput['fear'] = drawing[1];
+    jsonOutput['trust'] = drawing[2];
+    jsonOutput['joy'] = drawing[3];
+    jsonOutput['grief'] = drawing[4];
+    jsonOutput['anger'] = drawing[5];
+    db.collection('drawing_data').add(jsonOutput);
+    dataAdded = false;
+    saved = true;
   }
-
-  let jsonOutput = {};
-  const d = new Date();
-  jsonOutput['info'] = ['some info', 'gender: ' + bodySlider.value, d];
-  jsonOutput['drawing'] = drawing;
-  // saveJSON(jsonOutput, 'output.json');
-  dataAdded = false;
 }
 
 //load, display, save data
@@ -203,39 +155,6 @@ function saveData() {
 //   });
 // });
 //
-// function addPoints() {
-//   let dot = {
-//     x: mouseX,
-//     y: mouseY,
-//     col: currCol
-//   }
-//   emotions[currMood].push(dot);
-// }
-//
-// function drawImage() {
-//   for (let i = 0; i < emotions[currMood].length; i++) {
-//     let col = emotions[currMood][i].col;
-//     let x = emotions[currMood][i].x;
-//     let y = emotions[currMood][i].y;
-//     fill(col, 255, 255, 10);
-//     noStroke();
-//     for (let j = 1; j < 7; j++) {
-//       ellipse(x, y, j * 3, j * 3);
-//     }
-//   }
-// }
-//
-// function changeLanguage() {
-//   namesOfEmotions = ["desire", "fear", "trust", "joy", "grief", "anger"];
-//   for (let i = 0; i < namesOfEmotions.length; i++) {
-//     moodSel.option(namesOfEmotions[i], i);
-//     let emptyArr = [];
-//     emotions.push(emptyArr);
-//   }
-//   currMood = 0;
-// }
-
-/////////////////
 
 function boxResize() {
   let w = width / brushBoxes.length;
@@ -249,6 +168,7 @@ class Reposition {
     this.threshold = 170;
     this.currPos = 'above';
     this.prevPos = 'above';
+    this.stuck = false;
   }
   update() {
     if (document.documentElement.scrollTop >= this.threshold) {
@@ -256,13 +176,14 @@ class Reposition {
     } else {
       this.currPos = 'above';
     }
-    if (this.currPos != this.prevPos) {
+    if (isMobile && !this.stuck && this.currPos != this.prevPos) {
       this.prevPos = this.currPos;
       let container = document.getElementById('drawing-container');
       if (this.currPos === 'below') {
         container.classList.add("sticky");
+        this.stuck = true;
       } else {
-        container.classList.remove("sticky")
+        // container.classList.remove("sticky")
       }
       windowResized();
     }
@@ -404,18 +325,18 @@ function windowResized() {
   resizeCanvas(xSize, ySize);
   let outerDiv = document.getElementById('outer');
   outerDiv.style.width = (xSize * 1.05).toString() + 'px';
-  outerDiv.style.height = (ySize * 1.03).toString() + 'px';
+  outerDiv.style.height = (ySize * 1.2).toString() + 'px';
   scaleX = width / 500;
   scaleY = height / 1000;
   lerping();
   bodySlider.resize();
   boxResize();
   rad = radMax * scaleX;
-  let fontSize = 18 * scaleX;
+  let fontSize = 25 * scaleX;
   saveButton.size(80 * scaleX, 40 * scaleY);
-  // saveButton.style('font-size', fontSize + 'px');
+  saveButton.style('font-size', fontSize + 'px');
   emotionSel.size(120 * scaleX, 40 * scaleY);
-  // emotionSel.style('font-size', fontSize + 'px');
+  emotionSel.style('font-size', fontSize + 'px');
 
   saveButton.position(cnv.canvas.offsetLeft,
     cnv.canvas.offsetTop + bodySlider.ySize);
@@ -494,6 +415,7 @@ function addPoints() {
   ) {
     drawing[currEmotion].push(point);
     dataAdded = true;
+    saved = false;
   }
   currSeed++;
 }
@@ -522,19 +444,19 @@ function hashes(x, y, col, seed) {
   push();
   translate(x, y);
   rotate(PI / 4);
-  for (let i = 0; i < 6; i++) {
-    let rotOff = (random(30)-15)/100;
+  for (let i = 0; i < 5; i++) {
+    let rotOff = (random(30) - 15) / 100;
     rotate(rotOff);
     let xPos = (i - 3) * 3;
-    let yLen = random(rad / 2, rad);
+    let yLen = random(rad / 2, rad) * .7;
     line(xPos, -yLen, xPos, yLen)
   }
   rotate(PI / 2);
-  for (let i = 0; i < 6; i++) {
-    let rotOff = (random(30)-15)/100;
+  for (let i = 0; i < 5; i++) {
+    let rotOff = (random(30) - 15) / 100;
     rotate(rotOff);
     let xPos = (i - 3) * 3;
-    let yLen = random(rad / 2, rad);
+    let yLen = random(rad / 2, rad) * .7;
     line(xPos, -yLen, xPos, yLen)
   }
   pop();
@@ -699,13 +621,13 @@ function keyPressed() {
   // s = 83
   if (keyCode === 83) {
 
-    console.log('cont left ' + container.offsetTop);
-    console.log('out left ' + outerDiv.offsetTop);
+    // console.log('cont left ' + container.offsetTop);
+    // console.log('out left ' + outerDiv.offsetTop);
   }
   // d = 68
   if (keyCode === 68) {
     // get scroll position in px
-    console.log(document.documentElement.scrollTop);
+    // console.log(document.documentElement.scrollTop);
     // outerDiv.style.height = ySize.toString() + 'px';
     // cnv.canvas.style.offsetLeft = '50px';
   }
