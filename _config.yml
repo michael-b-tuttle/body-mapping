@@ -23,7 +23,7 @@ email: enfleshings@web.de
 description: >- # this means to ignore newlines until "baseurl:"
   body mapping deals with the question of body-images as awareness
 # baseurl: "body-mapping" # the subpath of your site, e.g. /blog
-baseUrl: "mapping-the-body"
+baseUrl: "mapping-the-body.com"
 # baseurl: ""
 # baseurl: "/_site"
 # url: "https://mapping-the-body.com/" # the base hostname & protocol for your site, e.g. http://example.com
