@@ -18,21 +18,26 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: body mapping
+title: mapping the body
 email: enfleshings@web.de
 description: >- # this means to ignore newlines until "baseurl:"
   body mapping deals with the question of body-images as awareness
-baseurl: "body-mapping" # the subpath of your site, e.g. /blog
+# baseurl: "body-mapping" # the subpath of your site, e.g. /blog
 # baseurl: ""
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/home"
+url: "https://mapping-the-body.com/" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: twitter
 # github_username:  jekyll
 
 # Build settings
 theme: minima
-# theme: jekyll-theme-hacker
+# css:
+#    navbar:
+#     background-color: "#1A69D5"
+#   header:
+#     background-color: "#1A69D5"
 plugins:
-  - jekyll-feed
+  # - jekyll-feed
 
 defaults:
   -

@@ -83,7 +83,7 @@ function setup() {
 }
 
 function draw() {
-  background(255);
+  background(240, 240, 240);
   if (mouseY < height - brushBoxes[0].h && mouseY > bodySlider.ySize) {
     noCursor();
   }
@@ -308,7 +308,7 @@ function mousePressed() {
 }
 
 function mouseDragged() {
-  if (mouseY < bodySlider.ySize) {
+  if (mouseY < bodySlider.ySize && mouseY > 0) {
     bodySlider.clicked();
     lerping();
   }
@@ -540,12 +540,12 @@ class BrushBox {
         break;
       case 5:
         stroke(0);
-        fill(255, 0, 0);
+        fill(255, 100, 181);
         rect(this.x, this.y, this.w, this.h);
         break;
       case 6:
         stroke(0);
-        fill(0, 0, 255);
+        fill(157, 255, 255);
         rect(this.x, this.y, this.w, this.h);
         break;
       case 7:
@@ -591,10 +591,10 @@ class BrushBox {
             currCol = color(0);
             break;
           case 5:
-            currCol = color(255, 0, 0);
+            currCol = color(255, 100, 181);
             break;
           case 6:
-            currCol = color(0, 0, 255);
+            currCol = color(157, 255, 255);
             break;
           case 7:
             drawing[currEmotion].pop();

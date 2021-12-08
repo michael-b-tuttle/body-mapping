@@ -31,38 +31,37 @@ After selecting body type please color in where you feel each emotion.
 
 <style>
   #drawing-container {
-    background-color: white;
+    <!-- background-color: #C4ADA9; -->
   }
   .bodyCanvas {
-    border: 1px #e6e6e6;
+    background-color: #C4ADA9;
+    border: 1px #1C1514;
     border-radius: 5px;
     margin:auto;
     padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
   .saveButton {
-    background-color: light grey;
-    border: 1px solid black;
-    color: black;
-    <!-- padding: 2.5vw; -->
+
+    color: #1C1514;
+
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 3.5vw;
     margin: 15px;
-    <!-- margin: auto; -->
     cursor: arrow;
     border-radius: 10%;
     padding: 0.25em;
     font-size: 1.25rem;
   }
   .saveButton:active {
-    background-color: grey;
+
   }
   .emotionSel {
     border: 1px solid black;
     background-color: #e6e6e6;
-    color: black;
+    <!-- color: black; -->
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -89,8 +88,7 @@ After selecting body type please color in where you feel each emotion.
   }
 
   #questionnaire {
-  background-color: #777;
-  color: white;
+  background-color: #C4ADA9;
   cursor: pointer;
   padding: 10px;
   width: 100%;
@@ -106,11 +104,11 @@ After selecting body type please color in where you feel each emotion.
   display: block;
   max-height: 1;
   overflow: hidden;
-  background-color: #aaf1f1;
   border: 1px #e6e6e6;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transition: max-height 0.75s ease-out;
+  margin: 5px;
 }
   .collapse {
     transition: max-height 0.75s ease-out;
