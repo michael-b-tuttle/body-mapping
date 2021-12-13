@@ -31,7 +31,7 @@ After selecting body type please color in where you feel each emotion.
 
 <style>
   #drawing-container {
-    <!-- background-color: #C4ADA9; -->
+
   }
   .bodyCanvas {
     background-color: #C4ADA9;
@@ -42,9 +42,7 @@ After selecting body type please color in where you feel each emotion.
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
   .saveButton {
-
     color: #1C1514;
-
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -61,7 +59,6 @@ After selecting body type please color in where you feel each emotion.
   .emotionSel {
     border: 1px solid black;
     background-color: #e6e6e6;
-    <!-- color: black; -->
     text-align: center;
     text-decoration: none;
     display: inline-block;

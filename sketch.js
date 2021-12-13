@@ -535,17 +535,17 @@ class BrushBox {
         break;
       case 4:
         stroke(0);
-        fill(0);
+        fill(31, 31, 31);
         rect(this.x, this.y, this.w, this.h);
         break;
       case 5:
         stroke(0);
-        fill(255, 100, 181);
+        fill(245, 0, 126);
         rect(this.x, this.y, this.w, this.h);
         break;
       case 6:
         stroke(0);
-        fill(157, 255, 255);
+        fill(33, 158, 188);
         rect(this.x, this.y, this.w, this.h);
         break;
       case 7:
@@ -588,13 +588,13 @@ class BrushBox {
             currBrush = "electric";
             break;
           case 4:
-            currCol = color(0);
+            currCol = color(31,31,31);
             break;
           case 5:
-            currCol = color(255, 100, 181);
+            currCol = color(245, 0, 126);
             break;
           case 6:
-            currCol = color(157, 255, 255);
+            currCol = color(33, 158, 188);
             break;
           case 7:
             drawing[currEmotion].pop();
